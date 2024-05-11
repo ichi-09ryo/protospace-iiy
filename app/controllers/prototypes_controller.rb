@@ -42,6 +42,11 @@ class PrototypesController < ApplicationController
     redirect_to prototypes_path
   end
 
+def show
+    @prototype = Prototype.find(params[:id])
+    @comment = Comment.new #@commentに代入
+    end
+
   private
 
   def prototype_params
@@ -55,8 +60,5 @@ class PrototypesController < ApplicationController
     end
   end
 
-  def show
-    @prototype = Prototype.find(params[:id])
-    @comment = Comment.new #@commentに代入
-    end
+  
 end
