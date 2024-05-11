@@ -39,7 +39,7 @@ class PrototypesController < ApplicationController
   def destroy
     @prototype = Prototype.find(params[:id])
     @prototype.destroy
-    redirect_to prototypes_path
+  redirect_to prototypes_path
   end
 
   private
@@ -54,9 +54,4 @@ class PrototypesController < ApplicationController
       redirect_to root_path
     end
   end
-
-  def show
-    @prototype = Prototype.find(params[:id])
-    @comment = Comment.new #@commentに代入
-    end
 end
