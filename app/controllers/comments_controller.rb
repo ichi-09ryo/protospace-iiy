@@ -5,9 +5,9 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      redirect_to prototype_path(@prototype)
+      redirect_to prototype_path(@comment.prototype)
     else
-      redirect_to prototype_path(@prototype)
+      render 'prototypes/show'
     end
   end
 
