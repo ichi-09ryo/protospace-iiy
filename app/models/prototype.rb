@@ -8,4 +8,3 @@ class Prototype < ApplicationRecord
   validates :concept, presence: true
   validates :image, attached: true
 end
-
