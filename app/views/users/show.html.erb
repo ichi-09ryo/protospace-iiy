@@ -27,11 +27,9 @@
       <h2 class="page-heading">
         <%= "#{@user.name}さんのプロトタイプ"%>
       </h2>
-      <% @user.prototypes.each do |prototype| %>
       <div class="user__card">
         <%= render partial: "prototypes/prototype", collection: @user.prototypes, as: :prototype %>
       </div>
-      <% end %>
     </div>
   </div>
 </div>
