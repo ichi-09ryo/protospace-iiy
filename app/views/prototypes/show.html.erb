@@ -9,9 +9,7 @@
       <% if user_signed_in? && current_user == @prototype.user %>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_prototype_path(@prototype), class: :prototype__btn %>
-          <%= form_with(model: @prototype, url: prototype_path(@prototype), method: :delete, class: "delete-form") do |form| %>
-            <%= form.submit "削除する", class: "prototype__btn" %>
-          <% end %>
+          <%= link_to "削除する", @prototype, data: { turbo_method: :delete }, class: :prototype__btn %>
         </div>
       <% end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
