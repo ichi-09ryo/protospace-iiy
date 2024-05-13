@@ -1,5 +1,5 @@
 class Prototype < ApplicationRecord
-  has_many :comments
+  has_many :comments, dependent: :destroy
   belongs_to :user
   has_one_attached :image
 
@@ -8,4 +8,3 @@ class Prototype < ApplicationRecord
   validates :concept, presence: true
   validates :image, attached: true
 end
-
